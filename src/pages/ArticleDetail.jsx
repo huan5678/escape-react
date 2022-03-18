@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 function ArticleDetail () {
   const [article, setArticle] = useState({});
   const { articleId } = useParams();
-  
+
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_URL}api/react/article/${articleId}`)
       .then((res) => {
@@ -64,7 +64,7 @@ function ArticleDetail () {
         <div className="card-body">
           <img src={article.image} className="image-fluid rounded mb-3" alt={article.title} />
           <label className="d-block" htmlFor="image">文章圖片連結</label>
-          <input type="text" className="form-control" value={article.image} id="image" onChange={handleChange} />          
+          <input type="text" className="form-control" value={article.image} id="image" onChange={handleChange} />
         </div>
       </div>
     </div>
